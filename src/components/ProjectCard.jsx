@@ -25,7 +25,24 @@ export default function ProjectCard({ project }) {
       className="project-card reveal rounded-[12px] border border-cloud dark:border-dark-border overflow-hidden transition-colors duration-tesla hover:border-electric-blue/30"
     >
       {/* Project Image */}
-      {project.imageGradient && (
+      {project.image ? (
+        <div className="relative w-full aspect-[21/9] overflow-hidden">
+          <img
+            src={project.image}
+            alt={`${project.title} screenshot`}
+            className="absolute inset-0 w-full h-full object-cover object-top"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
+          <div className="absolute inset-0 flex flex-col items-end justify-end p-6 md:p-8">
+            <span className="text-white/70 text-[12px] font-body uppercase tracking-[0.1em] mb-1">
+              {project.category}
+            </span>
+            <span className="text-white text-[20px] md:text-[28px] font-display font-medium text-right leading-tight drop-shadow-lg">
+              {project.title}
+            </span>
+          </div>
+        </div>
+      ) : project.imageGradient ? (
         <div
           className="relative w-full aspect-[21/9]"
           style={{
@@ -46,7 +63,7 @@ export default function ProjectCard({ project }) {
             </span>
           </div>
         </div>
-      )}
+      ) : null}
 
       <div className="p-8 md:p-10">
         <div className="flex flex-col lg:flex-row lg:items-start lg:gap-16">

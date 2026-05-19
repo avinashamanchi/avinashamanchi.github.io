@@ -81,7 +81,7 @@ export default function Resume() {
                   </p>
                 </div>
                 <span className="font-body text-pewter dark:text-silver-fog text-[14px] mt-1 md:mt-0 whitespace-nowrap">
-                  June 2024 &ndash; August 2024
+                  May 2023 &ndash; August 2023
                 </span>
               </div>
               <ul className="list-disc list-inside space-y-2 font-body text-graphite dark:text-dark-text-secondary text-[14px] leading-[1.7]">
@@ -104,7 +104,7 @@ export default function Resume() {
                   </p>
                 </div>
                 <span className="font-body text-pewter dark:text-silver-fog text-[14px] mt-1 md:mt-0 whitespace-nowrap">
-                  March 2023 &ndash; Present
+                  April 2025 &ndash; February 2026
                 </span>
               </div>
               <ul className="list-disc list-inside space-y-2 font-body text-graphite dark:text-dark-text-secondary text-[14px] leading-[1.7]">

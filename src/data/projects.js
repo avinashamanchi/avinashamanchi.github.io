@@ -3,7 +3,7 @@ export const projects = [
     id: 'resume-analyzer',
     category: 'ai \u00b7 automation',
     title: 'AI Resume Analyzer',
-    dates: 'October 2024 \u2013 January 2025',
+    dates: 'January 2026 \u2013 March 2026',
     course: 'Independent Project',
     context:
       'Job seekers spend hours tailoring resumes without knowing how Applicant Tracking Systems actually parse their documents. I built a web application that automates resume analysis, extracting keywords and simulating ATS scoring to give candidates actionable, data\u2011driven feedback before they apply.',
@@ -24,6 +24,7 @@ export const projects = [
       github: 'https://github.com/avinashamanchi/resume-analyzer',
     },
     documentation: 'https://github.com/avinashamanchi/resume-analyzer#readme',
+    image: '/resumeaiimage.png',
     imageGradient: ['#3E6AE1', '#1A3A7A'],
     repo: { owner: 'avinashamanchi', name: 'resume-analyzer' },
     hasMicroDemo: true,
@@ -32,7 +33,7 @@ export const projects = [
     id: 'convoautopsy',
     category: 'ai \u00b7 nlp \u00b7 web',
     title: 'ConvoAutopsy',
-    dates: 'February 2025 \u2013 April 2025',
+    dates: 'January 2026 \u2013 March 2026',
     course: 'Independent Project',
     context:
       'Understanding communication dynamics requires structured analysis that most people never perform. I built an AI\u2011powered platform that dissects conversations to surface patterns, behavioral trends, and actionable insights for self\u2011improvement and interpersonal awareness.',
@@ -53,6 +54,7 @@ export const projects = [
       github: 'https://github.com/avinashamanchi/convoautopsy',
     },
     documentation: 'https://github.com/avinashamanchi/convoautopsy#readme',
+    image: '/convoautopsyimage.png',
     imageGradient: ['#7C3AED', '#4C1D95'],
     repo: { owner: 'avinashamanchi', name: 'convoautopsy' },
     hasMicroDemo: false,
@@ -61,7 +63,7 @@ export const projects = [
     id: 'sage-app',
     category: 'accessibility \u00b7 mobile',
     title: 'S.A.G.E App',
-    dates: 'November 2024 \u2013 February 2025',
+    dates: 'April 2024 \u2013 June 2024',
     course: 'CS Honors Society \u2014 Community Service Project',
     context:
       'Seniors face significant daily challenges with technology, from complex interfaces to inaccessible design patterns. I developed a mobile\u2011first application focused on accessibility and daily support, collaborating on feature design that directly addresses age\u2011related usability barriers.',
@@ -82,6 +84,7 @@ export const projects = [
       github: 'https://github.com/avinashamanchi/Act_sage',
     },
     documentation: 'https://github.com/avinashamanchi/Act_sage#readme',
+    image: '/sageimage.png',
     imageGradient: ['#059669', '#064E3B'],
     repo: { owner: 'avinashamanchi', name: 'Act_sage' },
     hasMicroDemo: false,
@@ -90,7 +93,7 @@ export const projects = [
     id: 'eaa-detailing',
     category: 'entrepreneurship \u00b7 web',
     title: 'EAA Detailing',
-    dates: 'March 2023 \u2013 Present',
+    dates: 'April 2025 \u2013 February 2026',
     course: 'Independent Business Venture',
     context:
       'Co\u2011founded an automotive detailing business and built its entire digital infrastructure from scratch\u2014online booking engine, client management pipeline, and marketing funnel\u2014to eliminate manual scheduling friction and enable multi\u2011city expansion.',
@@ -110,6 +113,7 @@ export const projects = [
       live: 'https://eaadetailingservices.com',
     },
     documentation: null,
+    image: '/eaadetailingimage.png',
     imageGradient: ['#D97706', '#78350F'],
     repo: null,
     hasMicroDemo: false,
@@ -118,7 +122,7 @@ export const projects = [
     id: 'berkeley-lab',
     category: 'research \u00b7 data science',
     title: 'Lawrence Berkeley National Laboratory',
-    dates: 'June 2024 \u2013 August 2024',
+    dates: 'May 2023 \u2013 August 2023',
     course: 'Research Internship',
     context:
       'Selected as a research intern at a U.S. Department of Energy national laboratory, working on data\u2011driven analysis and interdisciplinary scientific computing projects requiring rigorous methodology and professional collaboration.',
@@ -136,6 +140,7 @@ export const projects = [
       'Contributed to active research workflows at a world\u2011class national lab, gaining hands\u2011on experience with large\u2011scale data processing, computational analysis techniques, and cross\u2011team scientific collaboration.',
     links: {},
     documentation: null,
+    image: null,
     imageGradient: ['#0891B2', '#134E4A'],
     repo: null,
     hasMicroDemo: false,
@@ -144,10 +149,13 @@ export const projects = [
 
 export const inDevelopment = [
   {
-    id: 'finance-tracker',
-    title: 'Personal Finance Tracker',
-    description: 'AI-powered expense categorization and budgeting with visual analytics.',
-    stack: ['Python', 'React', 'Data Visualization'],
+    id: 'sepsis-vitals',
+    title: 'Sepsis Vitals',
+    description:
+      'Vitals\u2011only sepsis prediction for district hospitals in low\u2011resource settings. Five validated clinical scores with AI\u2011powered analysis. No lab work required.',
+    stack: ['Python', 'Clinical AI', 'Data Visualization', 'Security'],
     status: 'In Development',
+    image: '/sepsisimage.png',
+    github: 'https://github.com/avinashamanchi/sepsis-vitals',
   },
 ]

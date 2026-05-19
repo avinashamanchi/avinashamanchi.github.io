@@ -56,28 +56,50 @@ export default function Projects() {
               {inDevelopment.map((item) => (
                 <div
                   key={item.id}
-                  className="reveal p-6 rounded-[12px] border border-cloud dark:border-dark-border opacity-80"
+                  className="reveal rounded-[12px] border border-cloud dark:border-dark-border overflow-hidden opacity-90"
                 >
-                  <div className="flex items-start justify-between mb-3">
-                    <h3 className="font-display text-carbon dark:text-white text-[18px] font-medium">
-                      {item.title}
-                    </h3>
-                    <span className="font-body text-[11px] text-electric-blue font-medium bg-electric-blue/10 px-2.5 py-1 rounded-tesla whitespace-nowrap">
-                      {item.status}
-                    </span>
-                  </div>
-                  <p className="font-body text-graphite dark:text-dark-text-secondary text-[14px] leading-[1.6] mb-4">
-                    {item.description}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {item.stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="font-body text-[12px] text-pewter dark:text-silver-fog bg-ash dark:bg-carbon px-2.5 py-1 rounded-tesla"
-                      >
-                        {tech}
+                  {item.image && (
+                    <div className="relative w-full aspect-[16/9] overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={`${item.title} preview`}
+                        className="w-full h-full object-cover object-top"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="font-display text-carbon dark:text-white text-[18px] font-medium">
+                        {item.title}
+                      </h3>
+                      <span className="font-body text-[11px] text-electric-blue font-medium bg-electric-blue/10 px-2.5 py-1 rounded-tesla whitespace-nowrap">
+                        {item.status}
                       </span>
-                    ))}
+                    </div>
+                    <p className="font-body text-graphite dark:text-dark-text-secondary text-[14px] leading-[1.6] mb-4">
+                      {item.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {item.stack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="font-body text-[12px] text-pewter dark:text-silver-fog bg-ash dark:bg-carbon px-2.5 py-1 rounded-tesla"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                    {item.github && (
+                      <a
+                        href={item.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center bg-white dark:bg-transparent text-graphite dark:text-dark-text-secondary font-body text-[13px] font-medium px-5 h-[36px] rounded-tesla transition-all duration-tesla hover:bg-ash dark:hover:bg-dark-surface border border-cloud dark:border-dark-border"
+                      >
+                        github
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
