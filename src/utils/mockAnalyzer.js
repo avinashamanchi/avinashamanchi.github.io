@@ -5,12 +5,12 @@ export function mockAnalyzer(text) {
 
   const foundSkills = ATS_HARD_SKILLS.filter((skill) => lower.includes(skill))
   const foundVerbs = ATS_ACTION_VERBS.filter((verb) => lower.includes(verb))
-  const foundMetrics = text.match(METRICS_PATTERN) || []
+  const foundMetrics = [...new Set((text.match(METRICS_PATTERN) || []).map(m => m.trim()))]
 
   const keywords = [
     ...foundSkills.map((s) => ({ type: 'skill', value: s })),
     ...foundVerbs.map((v) => ({ type: 'action', value: v })),
-    ...foundMetrics.slice(0, 5).map((m) => ({ type: 'metric', value: m.trim() })),
+    ...foundMetrics.slice(0, 5).map((m) => ({ type: 'metric', value: m })),
   ]
 
   // Score: 40% skills diversity, 30% action verbs, 20% metrics, 10% length

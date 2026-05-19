@@ -20,26 +20,20 @@ export default function MicroDemo() {
     setResult(null)
 
     const controller = new AbortController()
-    const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT)
+    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT)
 
     try {
-      const res = await Promise.race([
-        fetch(RENDER_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ text }),
-          signal: controller.signal,
-        }),
-        new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('timeout')), FETCH_TIMEOUT)
-        ),
-      ])
-      clearTimeout(timeout)
+      const res = await fetch(RENDER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text }),
+        signal: controller.signal,
+      })
+      clearTimeout(timeoutId)
       const data = await res.json()
       setResult(data)
     } catch {
-      clearTimeout(timeout)
-      controller.abort()
+      clearTimeout(timeoutId)
       const fallback = mockAnalyzer(text)
       setResult(fallback)
       showToast('Render backend warming up — running local analysis engine')
