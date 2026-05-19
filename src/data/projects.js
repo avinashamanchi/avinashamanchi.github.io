@@ -52,13 +52,26 @@ export const projects = [
     category: 'entrepreneurship \u00b7 web',
     title: 'EAA Detailing',
     context:
-      'Co-founded an automotive detailing business that needed a professional online presence and streamlined booking system to scale operations across multiple cities.',
-    stack: 'Web Development, Social Media Marketing, Business Operations',
+      'Co-founded an automotive detailing business and built its entire digital infrastructure from scratch\u2014online booking engine, client management pipeline, and marketing funnel\u2014to eliminate manual scheduling friction and enable multi-city expansion.',
+    stack: 'Web Development, SEO, Social Media Marketing, Business Operations',
     outcome:
-      'Scaled to 100+ clients across 4 cities, built website handling 20+ monthly bookings, increased client acquisition by 30% through digital marketing and SEO optimization.',
+      'Scaled to 100+ clients across 4 cities with a booking system handling 20+ monthly appointments. Increased client acquisition by 30% through digital marketing and SEO optimization, generating consistent recurring revenue.',
     links: {
       live: 'https://eaadetailingservices.com',
     },
+    repo: null,
+    hasMicroDemo: false,
+  },
+  {
+    id: 'berkeley-lab',
+    category: 'research \u00b7 data science',
+    title: 'Lawrence Berkeley National Laboratory',
+    context:
+      'Selected as a research intern at a U.S. Department of Energy national laboratory, working on data-driven analysis and interdisciplinary scientific computing projects requiring rigorous methodology and professional collaboration.',
+    stack: 'Python, Data Analysis, Scientific Computing, Research Methodology',
+    outcome:
+      'Contributed to active research workflows at a world-class national lab, gaining hands-on experience with large-scale data processing, computational analysis techniques, and cross-team scientific collaboration.',
+    links: {},
     repo: null,
     hasMicroDemo: false,
   },

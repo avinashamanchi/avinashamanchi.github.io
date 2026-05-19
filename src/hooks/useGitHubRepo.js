@@ -14,7 +14,8 @@ export function useGitHubRepo(owner, repo) {
     const cached = sessionStorage.getItem(cacheKey)
 
     if (cached) {
-      setData({ ...JSON.parse(cached), loading: false, error: false })
+      const parsed = JSON.parse(cached)
+      setData({ ...parsed, loading: false, error: parsed.error || false })
       return
     }
 
@@ -37,7 +38,9 @@ export function useGitHubRepo(owner, repo) {
       })
       .catch(() => {
         if (cancelled) return
-        setData({ stars: null, lastPush: null, language: null, loading: false, error: true })
+        const errorResult = { stars: null, lastPush: null, language: null, error: true }
+        sessionStorage.setItem(cacheKey, JSON.stringify(errorResult))
+        setData({ ...errorResult, loading: false })
       })
 
     return () => { cancelled = true }
