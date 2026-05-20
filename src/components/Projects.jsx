@@ -5,6 +5,7 @@ import ProjectCard from './ProjectCard'
 export default function Projects() {
   const headerRef = useRef()
   const devHeaderRef = useRef()
+  const devCardsRef = useRef([])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -20,6 +21,7 @@ export default function Projects() {
     )
     if (headerRef.current) observer.observe(headerRef.current)
     if (devHeaderRef.current) observer.observe(devHeaderRef.current)
+    devCardsRef.current.forEach((el) => { if (el) observer.observe(el) })
     return () => observer.disconnect()
   }, [])
 
@@ -53,9 +55,10 @@ export default function Projects() {
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {inDevelopment.map((item) => (
+              {inDevelopment.map((item, i) => (
                 <div
                   key={item.id}
+                  ref={(el) => (devCardsRef.current[i] = el)}
                   className="reveal rounded-[12px] border border-cloud dark:border-dark-border overflow-hidden opacity-90"
                 >
                   {item.image && (
