@@ -70,26 +70,32 @@ export default function Resume() {
           </h3>
           <div className="space-y-6">
             {/* Berkeley Lab */}
-            <div className="bg-white dark:bg-carbon rounded-[12px] p-6 md:p-8 border border-cloud dark:border-dark-border">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
-                <div>
-                  <h4 className="font-display text-carbon dark:text-white text-[18px] font-medium">
-                    Research Intern
-                  </h4>
-                  <p className="font-body text-graphite dark:text-dark-text-secondary text-[14px]">
-                    Lawrence Berkeley National Laboratory &mdash; Berkeley, CA
-                  </p>
+            <div className="relative bg-white dark:bg-carbon rounded-[12px] p-6 md:p-8 border border-cloud dark:border-dark-border overflow-hidden">
+              <div
+                className="absolute inset-0 bg-cover bg-center opacity-[0.07] dark:opacity-[0.10]"
+                style={{ backgroundImage: "url('/berkely.png')" }}
+              />
+              <div className="relative z-10">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                  <div>
+                    <h4 className="font-display text-carbon dark:text-white text-[18px] font-medium">
+                      Research Intern
+                    </h4>
+                    <p className="font-body text-graphite dark:text-dark-text-secondary text-[14px]">
+                      Lawrence Berkeley National Laboratory &mdash; Berkeley, CA
+                    </p>
+                  </div>
+                  <span className="font-body text-pewter dark:text-silver-fog text-[14px] mt-1 md:mt-0 whitespace-nowrap">
+                    May 2023 &ndash; August 2023
+                  </span>
                 </div>
-                <span className="font-body text-pewter dark:text-silver-fog text-[14px] mt-1 md:mt-0 whitespace-nowrap">
-                  May 2023 &ndash; August 2023
-                </span>
+                <ul className="list-disc list-inside space-y-2 font-body text-graphite dark:text-dark-text-secondary text-[14px] leading-[1.7]">
+                  <li>Conducted data&#8209;driven analysis and scientific computing research at a U.S. Department of Energy national laboratory.</li>
+                  <li>Developed and optimized Python scripts for large&#8209;scale data processing and computational analysis pipelines.</li>
+                  <li>Collaborated with cross&#8209;functional research teams, applying rigorous methodology to active scientific workflows.</li>
+                  <li>Documented research findings and methodology following professional scientific standards.</li>
+                </ul>
               </div>
-              <ul className="list-disc list-inside space-y-2 font-body text-graphite dark:text-dark-text-secondary text-[14px] leading-[1.7]">
-                <li>Conducted data&#8209;driven analysis and scientific computing research at a U.S. Department of Energy national laboratory.</li>
-                <li>Developed and optimized Python scripts for large&#8209;scale data processing and computational analysis pipelines.</li>
-                <li>Collaborated with cross&#8209;functional research teams, applying rigorous methodology to active scientific workflows.</li>
-                <li>Documented research findings and methodology following professional scientific standards.</li>
-              </ul>
             </div>
 
             {/* EAA Detailing */}

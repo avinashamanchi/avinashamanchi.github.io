@@ -23,7 +23,7 @@ export default function About() {
                 <img
                   src="/personalphoto.png"
                   alt="Avinash Amanchi"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
             </div>
