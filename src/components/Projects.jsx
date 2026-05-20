@@ -5,8 +5,6 @@ import ProjectCard from './ProjectCard'
 export default function Projects() {
   const headerRef = useRef()
   const devHeaderRef = useRef()
-  const devCardsRef = useRef([])
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -21,7 +19,6 @@ export default function Projects() {
     )
     if (headerRef.current) observer.observe(headerRef.current)
     if (devHeaderRef.current) observer.observe(devHeaderRef.current)
-    devCardsRef.current.forEach((el) => { if (el) observer.observe(el) })
     return () => observer.disconnect()
   }, [])
 
@@ -58,8 +55,7 @@ export default function Projects() {
               {inDevelopment.map((item, i) => (
                 <div
                   key={item.id}
-                  ref={(el) => (devCardsRef.current[i] = el)}
-                  className="reveal rounded-[12px] border border-cloud dark:border-dark-border overflow-hidden opacity-90"
+                  className="rounded-[12px] border border-cloud dark:border-dark-border overflow-hidden"
                 >
                   {item.image && (
                     <div className="relative w-full aspect-[16/9] overflow-hidden">
