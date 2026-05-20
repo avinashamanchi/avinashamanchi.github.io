@@ -152,10 +152,10 @@ export const inDevelopment = [
     id: 'sepsis-vitals',
     title: 'Sepsis Vitals',
     description:
-      'Vitals\u2011only sepsis prediction for district hospitals in low\u2011resource settings. Five validated clinical scores with AI\u2011powered analysis. No lab work required.',
-    stack: ['Python', 'Clinical AI', 'Data Visualization', 'Security'],
+      'Vitals\u2011only sepsis prediction for district hospitals in low\u2011resource settings. Five validated clinical scores (qSOFA, SIRS, NEWS2, Shock Index, UVA), ML pipeline with fairness auditing, and a production\u2011ready API\u2014no lab work required. 187 tests passing.',
+    stack: ['Python', 'FastAPI', 'LightGBM', 'Docker', 'Terraform', 'Prometheus'],
     status: 'In Development',
-    image: '/sepsisimage.png',
+    image: '/sepsis.png',
     github: 'https://github.com/avinashamanchi/sepsis-vitals',
   },
 ]
