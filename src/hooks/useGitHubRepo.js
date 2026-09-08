@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react'
 import { GITHUB_API } from '../utils/constants'
 
 export function useGitHubRepo(owner, repo) {
-  const [data, setData] = useState({ stars: null, lastPush: null, language: null, loading: true, error: false })
+  const [data, setData] = useState({ stars: null, lastPush: null, language: null, loading: Boolean(owner && repo), error: false })
 
   useEffect(() => {
     if (!owner || !repo) {
-      setData({ stars: null, lastPush: null, language: null, loading: false, error: false })
       return
     }
 
@@ -15,7 +14,7 @@ export function useGitHubRepo(owner, repo) {
 
     if (cached) {
       const parsed = JSON.parse(cached)
-      setData({ ...parsed, loading: false, error: parsed.error || false })
+      queueMicrotask(() => setData({ ...parsed, loading: false, error: parsed.error || false }))
       return
     }
 

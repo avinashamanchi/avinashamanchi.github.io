@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react'
 import ThemeToggle from './ThemeToggle'
 
 const NAV_LINKS = [
+  { href: '#projects', label: 'work' },
+  { href: '#impact', label: 'impact' },
   { href: '#about', label: 'about' },
-  { href: '#resume', label: 'resume' },
-  { href: '#skills', label: 'skills' },
-  { href: '#projects', label: 'projects' },
+  { href: '#resume', label: 'experience' },
   { href: '#contact', label: 'contact' },
 ]
 
@@ -44,13 +44,13 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-carbon/90 backdrop-blur-sm"
+        className="fixed top-0 left-0 right-0 z-50 bg-paper/90 dark:bg-ink/90 backdrop-blur-sm border-b border-line/70 dark:border-dark-line/70"
         aria-label="Main navigation"
       >
         <div className="max-w-[1383px] mx-auto flex items-center justify-between px-6 md:px-10 h-[72px]">
           <a
             href="#hero"
-            className="font-display text-carbon dark:text-white font-medium text-[15px] tracking-normal"
+            className="font-display text-ink dark:text-paper font-semibold text-[15px] tracking-[-0.03em]"
           >
             avinash amanchi
           </a>
@@ -60,7 +60,7 @@ export default function Navbar() {
               <a
                 key={href}
                 href={href}
-                className={`nav-link font-body text-pewter dark:text-dark-text-secondary text-[14px] font-medium ${activeSection === href.slice(1) ? 'active text-carbon dark:text-white' : ''}`}
+                className={`nav-link font-body text-muted dark:text-dark-muted text-[13px] font-medium ${activeSection === href.slice(1) ? 'active text-ink dark:text-paper' : ''}`}
               >
                 {label}
               </a>
@@ -70,7 +70,7 @@ export default function Navbar() {
               href="/avinash-amanchi-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-electric-blue text-white font-body text-[14px] font-medium px-5 py-2 rounded-tesla transition-all duration-tesla hover:opacity-90"
+              className="nav-cta bg-acid text-ink font-body text-[13px] font-semibold px-5 py-2 rounded-full transition-all duration-tesla hover:bg-lime"
             >
               resume
             </a>
@@ -96,7 +96,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`mobile-menu fixed top-0 right-0 bottom-0 w-[280px] bg-white dark:bg-carbon z-[60] flex flex-col pt-24 px-8 gap-6 ${menuOpen ? 'open' : ''}`}
+        className={`mobile-menu fixed top-0 right-0 bottom-0 w-[300px] bg-paper dark:bg-ink z-[60] flex flex-col pt-24 px-8 gap-6 border-l border-line dark:border-dark-line ${menuOpen ? 'open' : ''}`}
         role="dialog"
         aria-modal="true"
         aria-hidden={!menuOpen}
@@ -104,7 +104,7 @@ export default function Navbar() {
       >
         <button
           onClick={() => setMenuOpen(false)}
-          className="absolute top-6 right-6 text-carbon dark:text-white text-[24px] font-light"
+          className="absolute top-6 right-6 text-ink dark:text-paper text-[24px] font-light"
           aria-label="Close navigation menu"
         >
           &times;
@@ -114,7 +114,7 @@ export default function Navbar() {
             key={href}
             href={href}
             onClick={() => setMenuOpen(false)}
-            className="font-body text-carbon dark:text-white text-[18px] font-medium"
+            className="font-body text-ink dark:text-paper text-[18px] font-medium"
           >
             {label}
           </a>
@@ -123,7 +123,7 @@ export default function Navbar() {
           href="/avinash-amanchi-resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-electric-blue text-white font-body text-[14px] font-medium px-5 py-3 rounded-tesla text-center mt-4 transition-all duration-tesla hover:opacity-90"
+          className="bg-acid text-ink font-body text-[14px] font-semibold px-5 py-3 rounded-full text-center mt-4 transition-all duration-tesla hover:bg-lime"
         >
           resume
         </a>

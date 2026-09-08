@@ -1,110 +1,54 @@
-import { useEffect, useRef } from 'react'
-import { projects, inDevelopment } from '../data/projects'
+import { featuredProjects, otherProjects } from '../data/projects'
 import ProjectCard from './ProjectCard'
 
-export default function Projects() {
-  const headerRef = useRef()
-  const devHeaderRef = useRef()
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible')
-            observer.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.15 }
-    )
-    if (headerRef.current) observer.observe(headerRef.current)
-    if (devHeaderRef.current) observer.observe(devHeaderRef.current)
-    return () => observer.disconnect()
-  }, [])
+function Reveal({ children, className = '' }) {
+  return <div className={`reveal ${className}`}>{children}</div>
+}
 
+function SmallProject({ project }) {
   return (
-    <section id="projects" className="py-24 md:py-32 px-6 md:px-10">
-      <div className="max-w-[1383px] mx-auto">
-        <div ref={headerRef} className="reveal mb-14">
-          <p className="font-body text-electric-blue text-[14px] font-medium mb-4">
-            projects
-          </p>
-          <h2 className="font-display text-carbon dark:text-white text-[28px] md:text-[32px] font-medium leading-[1.2]">
-            Selected work.
-          </h2>
+    <article className="small-project">
+      <div className="small-project__image">
+        <img src={project.image} alt={`${project.title} preview`} />
+      </div>
+      <div className="small-project__body">
+        <div className="small-project__topline"><span>{project.stack}</span><span>↗</span></div>
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+        <div className="small-project__links">
+          {project.live && <a href={project.live} target="_blank" rel="noopener noreferrer">Live <span>↗</span></a>}
+          {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer">Code <span>↗</span></a>}
         </div>
+      </div>
+    </article>
+  )
+}
 
-        <div className="space-y-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-
-        {/* In Development */}
-        {inDevelopment.length > 0 && (
-          <div className="mt-20">
-            <div ref={devHeaderRef} className="reveal mb-10">
-              <p className="font-body text-electric-blue text-[14px] font-medium mb-4">
-                in development
-              </p>
-              <h2 className="font-display text-carbon dark:text-white text-[24px] md:text-[28px] font-medium leading-[1.2]">
-                What I'm building next.
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {inDevelopment.map((item, i) => (
-                <div
-                  key={item.id}
-                  className="rounded-[12px] border border-cloud dark:border-dark-border overflow-hidden"
-                >
-                  {item.image && (
-                    <div className="relative w-full aspect-[16/9] overflow-hidden">
-                      <img
-                        src={item.image}
-                        alt={`${item.title} preview`}
-                        className="w-full h-full object-cover object-top"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                    </div>
-                  )}
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <h3 className="font-display text-carbon dark:text-white text-[18px] font-medium">
-                        {item.title}
-                      </h3>
-                      <span className="font-body text-[11px] text-electric-blue font-medium bg-electric-blue/10 px-2.5 py-1 rounded-tesla whitespace-nowrap">
-                        {item.status}
-                      </span>
-                    </div>
-                    <p className="font-body text-graphite dark:text-dark-text-secondary text-[14px] leading-[1.6] mb-4">
-                      {item.description}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5 mb-4">
-                      {item.stack.map((tech) => (
-                        <span
-                          key={tech}
-                          className="font-body text-[12px] text-pewter dark:text-silver-fog bg-ash dark:bg-carbon px-2.5 py-1 rounded-tesla"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    {item.github && (
-                      <a
-                        href={item.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center bg-white dark:bg-transparent text-graphite dark:text-dark-text-secondary font-body text-[13px] font-medium px-5 h-[36px] rounded-tesla transition-all duration-tesla hover:bg-ash dark:hover:bg-dark-surface border border-cloud dark:border-dark-border"
-                      >
-                        github
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
+export default function Projects() {
+  return (
+    <section id="projects" className="projects-section section-space">
+      <div className="page-wrap">
+        <Reveal className="section-intro">
+          <div>
+            <p className="eyebrow">SELECTED WORK / 2023—26</p>
+            <h2>Ideas are cheap.<br /><em>Evidence is the work.</em></h2>
           </div>
-        )}
+          <p className="section-intro__aside">Three projects where the constraint mattered as much as the code.</p>
+        </Reveal>
+
+        <div className="featured-list">
+          {featuredProjects.map((project, index) => <ProjectCard key={project.id} project={project} index={index} />)}
+        </div>
+
+        <div className="other-work">
+          <Reveal className="other-work__heading">
+            <p className="eyebrow">MORE THINGS I’VE BUILT</p>
+            <p>Different problems. Same habit: ship, listen, refine.</p>
+          </Reveal>
+          <div className="small-project-grid">
+            {otherProjects.map((project) => <SmallProject key={project.id} project={project} />)}
+          </div>
+        </div>
       </div>
     </section>
   )

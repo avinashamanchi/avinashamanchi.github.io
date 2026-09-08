@@ -1,21 +1,21 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import About from './components/About'
 import Resume from './components/Resume'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
+import About from './components/About'
 import Contact from './components/Contact'
 
 export default function App() {
   return (
-    <div className="bg-white dark:bg-carbon text-graphite dark:text-dark-text-secondary text-[14px] leading-[1.43] font-normal">
+    <div className="site-shell bg-paper dark:bg-ink text-ink dark:text-paper text-[14px] leading-[1.43] font-normal">
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Resume />
-        <Skills />
         <Projects />
+        <Skills />
+        <Resume />
+        <About />
       </main>
       <Contact />
     </div>

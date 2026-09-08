@@ -5,6 +5,16 @@ export default {
   theme: {
     extend: {
       colors: {
+        paper: '#F2F1EB',
+        ink: '#151714',
+        muted: '#73786C',
+        line: '#D9DBD1',
+        acid: '#D5F75B',
+        lime: '#B9DF3B',
+        signal: '#F06C45',
+        panel: '#E8E9E0',
+        'dark-muted': '#A4AA98',
+        'dark-line': '#30352E',
         'electric-blue': '#3E6AE1',
         carbon: '#171A20',
         graphite: '#393C41',
@@ -17,8 +27,8 @@ export default {
         'dark-text-secondary': '#B0B3B8',
       },
       fontFamily: {
-        display: ['Syne', 'sans-serif'],
-        body: ['Outfit', 'sans-serif'],
+        display: ['Space Grotesk', 'sans-serif'],
+        body: ['Space Grotesk', 'sans-serif'],
       },
       borderRadius: {
         tesla: '4px',

@@ -1,74 +1,27 @@
-import { useEffect, useRef } from 'react'
+import { impactItems } from '../data/projects'
 
-const SKILL_CATEGORIES = [
-  {
-    title: 'Frontend & UI',
-    skills: ['JavaScript', 'React', 'Vite', 'HTML5', 'CSS3', 'Responsive Design'],
-  },
-  {
-    title: 'Backend & Data',
-    skills: ['Python', 'Java', 'REST APIs', 'API Integrations', 'Data Visualization'],
-  },
-  {
-    title: 'DevOps & Tooling',
-    skills: ['Git / GitHub', 'Bash / Shell', 'Web Deployment', 'GitHub Pages', 'Render'],
-  },
-  {
-    title: 'AI & Analytics',
-    skills: ['AI / ML Tools', 'NLP', 'LLM Integration', 'ATS Analysis', 'Prompt Engineering'],
-  },
+const capabilities = [
+  ['Build', 'Python · JavaScript / TypeScript · React · FastAPI · SQL'],
+  ['Ship', 'Git · APIs · Docker · GitHub Pages · Render'],
+  ['Think', 'AI / ML integration · NLP · data analysis · user research'],
 ]
 
 export default function Skills() {
-  const headerRef = useRef()
-  const gridRef = useRef()
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('visible')
-        })
-      },
-      { threshold: 0.15 }
-    )
-    if (headerRef.current) observer.observe(headerRef.current)
-    if (gridRef.current) observer.observe(gridRef.current)
-    return () => observer.disconnect()
-  }, [])
-
-  return (
-    <section id="skills" className="py-24 md:py-32 px-6 md:px-10 bg-ash dark:bg-dark-surface">
-      <div className="max-w-[1383px] mx-auto">
-        <div ref={headerRef} className="reveal mb-14">
-          <p className="font-body text-electric-blue text-[14px] font-medium mb-4">
-            skills
-          </p>
-          <h2 className="font-display text-carbon dark:text-white text-[28px] md:text-[32px] font-medium leading-[1.2]">
-            Technologies I work with.
-          </h2>
-        </div>
-
-        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 reveal-stagger">
-          {SKILL_CATEGORIES.map(({ title, skills }) => (
-            <div key={title}>
-              <h3 className="font-display text-carbon dark:text-white text-[16px] font-medium mb-5">
-                {title}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="skill-tag font-body text-[13px] text-graphite dark:text-dark-text-secondary font-normal bg-white dark:bg-carbon px-3 py-1.5 rounded-tesla cursor-default transition-colors duration-tesla hover:bg-carbon hover:text-white dark:hover:bg-white dark:hover:text-carbon"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+  return <section id="impact" className="impact-section section-space">
+    <div className="page-wrap">
+      <div className="impact-heading reveal">
+        <p className="eyebrow">SELECTED IMPACT</p>
+        <h2>Proof, in the places<br /><em>it actually counts.</em></h2>
+      </div>
+      <div className="impact-grid reveal-stagger">
+        {impactItems.map((item) => <div className="impact-item" key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>)}
+      </div>
+      <div className="capabilities">
+        <p className="eyebrow">THE TOOLKIT</p>
+        <div className="capabilities-grid">
+          {capabilities.map(([title, items]) => <div key={title} className="capability"><span>{title}</span><p>{items}</p></div>)}
         </div>
       </div>
-    </section>
-  )
+    </div>
+  </section>
 }

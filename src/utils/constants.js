@@ -21,4 +21,4 @@ export const ATS_ACTION_VERBS = [
   'configured', 'orchestrated', 'engineered', 'maintained',
 ]
 
-export const METRICS_PATTERN = /\d+[\+%]?(?:\s+(?:users|clients|customers|increase|reduction|improvement|faster|slower))?/gi
+export const METRICS_PATTERN = /\d+[+%]?(?:\s+(?:users|clients|customers|increase|reduction|improvement|faster|slower))?/gi
