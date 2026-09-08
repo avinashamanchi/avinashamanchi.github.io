@@ -1,7 +1,7 @@
 export default function About() {
   return <section id="about" className="about-section section-space">
     <div className="page-wrap about-layout">
-      <div className="about-photo reveal"><img src="/personalphoto.png" alt="Avinash Amanchi" /><span>currently in<br />Dublin, CA</span></div>
+      <div className="about-photo reveal"><img src="/personalphoto.jpg" alt="Avinash Amanchi" /><span>currently in<br />Dublin, CA</span></div>
       <div className="about-copy reveal">
         <p className="eyebrow">A LITTLE CONTEXT</p>
         <h2>I keep looking for the friction that stops someone from <em>moving forward.</em></h2>
