@@ -67,7 +67,7 @@ export const otherProjects = [
     title: 'ConvoAutopsy',
     description: 'An AI-assisted reflection tool for noticing patterns in everyday conversations.',
     stack: 'JavaScript · NLP · Open source',
-    image: '/convoautopsyimage.png',
+    image: '/convoautopsyimage.jpg',
     live: 'https://avinashamanchi.github.io/convoautopsy/',
     github: 'https://github.com/avinashamanchi/convoautopsy',
   },
