@@ -1,15 +1,17 @@
 import { featuredProjects, otherProjects } from '../data/projects'
+import useReveal from '../hooks/useReveal'
 import ProjectCard from './ProjectCard'
 
 function Reveal({ children, className = '' }) {
-  return <div className={`reveal ${className}`}>{children}</div>
+  const ref = useReveal()
+  return <div ref={ref} className={`reveal ${className}`}>{children}</div>
 }
 
 function SmallProject({ project }) {
   return (
     <article className="small-project">
       <div className="small-project__image">
-        <img src={project.image} alt={`${project.title} preview`} />
+        <img src={project.image} alt={project.alt} loading="lazy" decoding="async" />
       </div>
       <div className="small-project__body">
         <div className="small-project__topline"><span>{project.stack}</span><span>↗</span></div>

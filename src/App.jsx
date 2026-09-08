@@ -8,9 +8,9 @@ import Contact from './components/Contact'
 
 export default function App() {
   return (
-    <div className="site-shell bg-paper dark:bg-ink text-ink dark:text-paper text-[14px] leading-[1.43] font-normal">
+    <div className="site-shell text-[14px] leading-[1.43] font-normal">
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex="-1">
         <Hero />
         <Projects />
         <Skills />

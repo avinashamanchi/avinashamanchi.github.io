@@ -4,7 +4,7 @@ function WordlessArt() {
   return <div className="project-art project-art--wordless">
     <div className="art-grid" />
     <div className="art-label">support request / 09:42</div>
-    <img className="art-photo" src="/wordless-team.jpg" alt="Avinash Amanchi and his Wordless teammates holding their Third Place certificate" />
+    <img className="art-photo" src="/wordless-team.jpg" alt="Avinash Amanchi and his Wordless teammates holding their Third Place certificate" loading="lazy" decoding="async" />
     <div className="art-fragment">order…<br />wrong…</div>
     <div className="art-arrow">→</div>
     <div className="art-match"><span>LIKELY MATCH</span><strong>Duplicate charge</strong><small>one-tap confirmation</small></div>
@@ -27,7 +27,7 @@ function ProjectArt({ project }) {
   if (project.visual === 'wordless') return <WordlessArt />
   if (project.visual === 'fieldcraft') return <FieldCraftArt />
   return <div className="project-art project-art--sepsis">
-    <img src={project.image} alt="Sepsis Vitals interface preview" />
+    <img src={project.image} alt="Sepsis Vitals interface preview" loading="lazy" decoding="async" />
     <div className="sepsis-overlay"><span>vitals-only</span><strong>0.858</strong><small>AUROC</small></div>
   </div>
 }

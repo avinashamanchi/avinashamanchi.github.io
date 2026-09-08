@@ -1,8 +1,14 @@
+import useReveal from '../hooks/useReveal'
+
+/* TODO(avinash): verify the official athlete award name before using this copy in applications. */
 export default function About() {
+  const photoRef = useReveal()
+  const copyRef = useReveal()
+
   return <section id="about" className="about-section section-space">
     <div className="page-wrap about-layout">
-      <div className="about-photo reveal"><img src="/personalphoto.jpg" alt="Avinash Amanchi" /><span>currently in<br />Dublin, CA</span></div>
-      <div className="about-copy reveal">
+      <div ref={photoRef} className="about-photo reveal"><img src="/personalphoto.jpg" alt="Avinash Amanchi" loading="lazy" decoding="async" /><span>currently in<br />Dublin, CA</span></div>
+      <div ref={copyRef} className="about-copy reveal">
         <p className="eyebrow">A LITTLE CONTEXT</p>
         <h2>I keep looking for the friction that stops someone from <em>moving forward.</em></h2>
         <p>I’m a builder and researcher interested in systems where the constraint is part of the problem: aphasia and communication, accessibility and usability, invoicing and time, clinical screening and limited lab access.</p>

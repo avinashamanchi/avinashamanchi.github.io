@@ -17,7 +17,7 @@ function WordlessPreview() {
         <span className="preview-kicker">possible issue</span>
         <strong>Duplicate charge</strong>
         <span>We found a likely match in your recent activity.</span>
-        <button type="button">Confirm issue <span>↗</span></button>
+        <span className="preview-mock-button">Confirm issue <span>↗</span></span>
       </div>
       <div className="preview-rail"><span>context retrieval</span><span>semantic match</span><span>one tap</span></div>
     </div>
@@ -63,7 +63,7 @@ export default function Hero() {
         </div>
         <SystemMap />
       </div>
-      <div className="hero-footer page-wrap"><span>scroll to explore</span><span className="hero-footer__line" /><span>01 / 05</span></div>
+      <div className="hero-footer page-wrap"><span>scroll to explore</span><span className="hero-footer__line" /></div>
     </header>
   )
 }
