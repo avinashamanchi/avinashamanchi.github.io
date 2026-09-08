@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2f1eb"/>
+  <path d="M0 98h1200M0 196h1200M0 294h1200M0 392h1200M0 490h1200M100 0v630M200 0v630M300 0v630M400 0v630M500 0v630M600 0v630M700 0v630M800 0v630M900 0v630M1000 0v630M1100 0v630" stroke="#d9dbd1" stroke-width="1"/>
+  <rect x="70" y="66" width="1060" height="498" fill="none" stroke="#151714" stroke-width="2"/>
+  <rect x="70" y="66" width="16" height="498" fill="#d5f75b"/>
+  <text x="126" y="145" fill="#73786c" font-family="monospace" font-size="18" letter-spacing="3">AVINASH AMANCHI · BUILDER / RESEARCHER</text>
+  <text x="126" y="270" fill="#151714" font-family="Arial, sans-serif" font-size="72" font-weight="600">I build systems that</text>
+  <text x="126" y="350" fill="#73786c" font-family="Georgia, serif" font-size="78" font-style="italic">move beyond the prototype.</text>
+  <text x="126" y="450" fill="#151714" font-family="monospace" font-size="20">AI · ACCESSIBILITY · HEALTHCARE · APPLIED SYSTEMS</text>
+  <circle cx="1028" cy="150" r="38" fill="#f06c45"/>
+  <text x="1015" y="159" fill="#f2f1eb" font-family="monospace" font-size="17">↗</text>
+</svg>
