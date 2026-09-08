@@ -49,7 +49,7 @@ export default function Hero() {
           <p className="eyebrow hero-line">AVINASH AMANCHI <span>·</span> BUILDER / RESEARCHER</p>
           <h1 className="hero-line">I build systems that move <em>beyond the prototype.</em></h1>
           <p className="hero-summary hero-line">
-            AI, accessibility, healthcare, and applied systems — built around real constraints and tested with real people.
+            AI, accessibility, healthcare, and applied systems — built around real constraints and often shaped by real users.
           </p>
           <div className="hero-actions hero-line">
             <a href="#projects" className="button button--primary">View the work <span>↓</span></a>

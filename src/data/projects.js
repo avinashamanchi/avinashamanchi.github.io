@@ -9,8 +9,11 @@ export const featuredProjects = [
     built:
       'A context-aware flow that retrieves likely issues, explains the match, and lets a person confirm with one tap.',
     result: '3rd place · OpenAI × Start2 × Zendesk Hackathon',
+    constraints: 'Four hours to build a working accessibility prototype without asking the user to compose a complete sentence.',
+    iteration: 'The team moved from description-first support to evidence-first matching, then made the final action a tap-to-confirm card.',
+    limitation: 'Wordless is a hackathon prototype; the next step is testing the interaction with people who live with aphasia.',
     stack: ['AI retrieval', 'account context', 'one-tap confirmation'],
-    links: { github: 'https://github.com/avinashamanchi' },
+    links: { article: 'https://patch.com/california/dublin/dublin-students-build-ai-tool-designed-help-people-aphasia-nodx' },
     visual: 'wordless',
   },
   {
@@ -22,7 +25,11 @@ export const featuredProjects = [
       'Low-resource hospitals need useful signals before laboratory results are available.',
     built:
       'A FHIR-ready pipeline for feature preparation, Sepsis-3 labeling, model scoring, and fairness monitoring.',
-    result: '0.858 AUROC · vitals-only model',
+    result: '0.916 → 0.858 AUROC · labs removed',
+    comparison: { full: '0.916', vitals: '0.858', delta: '−0.058' },
+    constraints: 'Synthetic cohort, explicit Sepsis-3 labeling, and an ablation that removes every laboratory value from the model.',
+    iteration: 'The project became more honest as the experiment narrowed: measure the loss from removing labs instead of presenting one score without context.',
+    limitation: 'Synthetic data only. The next step is retrospective evaluation on credentialed clinical data.',
     stack: ['Python', 'FastAPI', 'LightGBM', 'fairness audit'],
     note: 'Synthetic data only. Not validated for clinical care.',
     links: { github: 'https://github.com/avinashamanchi/sepsis-vitals' },
@@ -38,7 +45,10 @@ export const featuredProjects = [
       'Tradespeople lose time turning completed work into paperwork after the job is already done.',
     built:
       'A voice-first job capture flow that turns the messy end of a day into a clean, client-ready invoice.',
-    result: '8 min → 2 min · 6-week pilot',
+    result: '8 → 2 min invoicing · 12-business pilot · 7 retained users',
+    constraints: 'Capture the job at the end of a long workday, when hands are busy and paperwork is the least interesting task left.',
+    iteration: 'The workflow got smaller: speak the job, review the line items, send the invoice. Less dashboard, more momentum.',
+    limitation: 'The pilot was intentionally narrow; the next version needs deeper scheduling and payment workflows.',
     stack: ['voice capture', 'workflow design', 'invoicing'],
     links: {},
     visual: 'fieldcraft',
@@ -86,5 +96,5 @@ export const impactItems = [
   { value: '3rd', label: 'OpenAI × Start2 × Zendesk hackathon' },
   { value: '100+', label: 'EAA customers across 4 cities' },
   { value: 'Lab', label: 'Lawrence Berkeley National Laboratory' },
-  { value: '6', label: 'states reached through community programs' },
+  { value: '180+', label: 'students surveyed for a district financial-literacy elective' },
 ]

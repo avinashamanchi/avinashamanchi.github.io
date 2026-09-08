@@ -4,6 +4,7 @@ function WordlessArt() {
   return <div className="project-art project-art--wordless">
     <div className="art-grid" />
     <div className="art-label">support request / 09:42</div>
+    <img className="art-photo" src="/wordless-team.jpg" alt="Avinash Amanchi and his Wordless teammates holding their Third Place certificate" />
     <div className="art-fragment">order…<br />wrong…</div>
     <div className="art-arrow">→</div>
     <div className="art-match"><span>LIKELY MATCH</span><strong>Duplicate charge</strong><small>one-tap confirmation</small></div>
@@ -56,12 +57,28 @@ export default function ProjectCard({ project, index }) {
         <div><span>Built</span><p>{project.built}</p></div>
       </div>
       <div className="project-result"><span>Outcome</span><strong>{project.result}</strong></div>
+      {project.comparison && <div className="research-comparison" aria-label="Sepsis Vitals model comparison">
+        <div><span>full feature model</span><strong>{project.comparison.full}</strong></div>
+        <b>remove labs ↓</b>
+        <div><span>vitals only</span><strong>{project.comparison.vitals}</strong></div>
+        <div className="comparison-delta"><span>difference</span><strong>{project.comparison.delta}</strong></div>
+      </div>}
       <div className="project-bottom">
         <div className="stack-list">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>
         <div className="project-links">
           {project.links.github && <a href={project.links.github} target="_blank" rel="noopener noreferrer">View code <span>↗</span></a>}
+          {project.links.article && <a href={project.links.article} target="_blank" rel="noopener noreferrer">Read the Patch story <span>↗</span></a>}
         </div>
       </div>
+      <details className="project-details">
+        <summary>Open case study <span>+</span></summary>
+        <div className="project-details__body">
+          <div><span>Constraints</span><p>{project.constraints}</p></div>
+          <div><span>Iteration</span><p>{project.iteration}</p></div>
+          <div><span>Current limit</span><p>{project.limitation}</p></div>
+          {project.links.article && <p className="project-note">Recognition and team photo reported by <a href={project.links.article} target="_blank" rel="noopener noreferrer">Dublin, CA Patch</a>.</p>}
+        </div>
+      </details>
       {project.note && <p className="project-note">{project.note}</p>}
     </div>
   </article>
