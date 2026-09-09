@@ -1,10 +1,9 @@
 import useReveal from '../hooks/useReveal'
 
-/* TODO(avinash): verify the official CSHS role wording before publishing applications. */
 const experience = [
-  { year: '2023', role: 'Research intern', org: 'Lawrence Berkeley National Laboratory', detail: 'Python scripts, scientific computing, and reproducible analysis.' },
-  { year: '2024—26', role: 'President', org: 'Computer Science Honors Society', detail: 'Workshops, hackathons, mentorship, and technical community.' },
-  { year: '2025—26', role: 'Co-founder / lead developer', org: 'EAA Detailing', detail: 'Digital infrastructure for 100+ customers across 4 cities.' },
+  { year: '2025—26', role: 'Co-Founder & Operations Manager', org: 'EAA Detailing', detail: 'Built the booking and digital acquisition systems behind 100+ customers across four cities.' },
+  { year: '2024—26', role: 'Co-President', org: 'Computer Science Honors Society', detail: 'Co-led growth from 12 to 25 members in four months and organized weekly projects and three hackathons.' },
+  { year: '2023', role: 'Research Intern', org: 'Lawrence Berkeley National Laboratory', detail: 'Processed root and leaf measurement data for a plant-growth study using Python and reproducible analysis workflows.' },
 ]
 
 function Reveal({ children, className = '' }) {
