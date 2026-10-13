@@ -16,7 +16,7 @@ export default function Skills() {
     <div className="page-wrap">
       <div ref={headingRef} className="impact-heading reveal">
         <p className="eyebrow">SELECTED IMPACT</p>
-        <h2>Proof, in the places<br /><em>it actually counts.</em></h2>
+        <h2>Selected results.</h2>
       </div>
       <div ref={impactRef} className="impact-grid reveal-stagger">
         {impactItems.map((item) => <div className="impact-item" key={item.label}><strong>{item.value}</strong><span>{item.label}</span></div>)}

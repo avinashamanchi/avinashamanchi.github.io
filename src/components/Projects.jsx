@@ -19,6 +19,7 @@ function SmallProject({ project }) {
         <p>{project.description}</p>
         <div className="small-project__links">
           {project.live && <a href={project.live} target="_blank" rel="noopener noreferrer">Live <span>↗</span></a>}
+          {project.screenshot && <a href={project.screenshot} target="_blank" rel="noopener noreferrer">View site screenshot <span>↗</span></a>}
           {project.github && <a href={project.github} target="_blank" rel="noopener noreferrer">Code <span>↗</span></a>}
         </div>
       </div>
@@ -33,9 +34,9 @@ export default function Projects() {
         <Reveal className="section-intro">
           <div>
             <p className="eyebrow">SELECTED WORK / 2023—26</p>
-            <h2>Ideas are cheap.<br /><em>Evidence is the work.</em></h2>
+            <h2>Selected projects.</h2>
           </div>
-          <p className="section-intro__aside">Three projects where the constraint mattered as much as the code.</p>
+          <p className="section-intro__aside">Project roles, implementation details, results, and limits.</p>
         </Reveal>
 
         <div className="featured-list">
@@ -45,7 +46,7 @@ export default function Projects() {
         <div className="other-work">
           <Reveal className="other-work__heading">
             <p className="eyebrow">MORE THINGS I’VE BUILT</p>
-            <p>Different problems. Same habit: ship, listen, refine.</p>
+            <p>Browse project previews, code, and live demos.</p>
           </Reveal>
           <div className="small-project-grid">
             {otherProjects.map((project) => <SmallProject key={project.id} project={project} />)}

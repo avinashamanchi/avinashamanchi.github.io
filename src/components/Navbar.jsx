@@ -103,7 +103,7 @@ export default function Navbar() {
               </a>
             ))}
             <a href="/avinash-amanchi-resume.pdf" target="_blank" rel="noopener noreferrer" className="nav-cta">
-              resume
+              View résumé (PDF)
             </a>
           </div>
 
@@ -136,7 +136,7 @@ export default function Navbar() {
               <a key={href} href={href} onClick={closeMenu} className="mobile-menu__link">{label}</a>
             ))}
             <a href="/avinash-amanchi-resume.pdf" target="_blank" rel="noopener noreferrer" className="mobile-menu__resume">
-              resume
+              View résumé (PDF)
             </a>
           </div>
         </>

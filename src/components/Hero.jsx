@@ -27,7 +27,7 @@ function WordlessPreview() {
 function FieldCraftPreview() {
   return (
     <div className="hero-preview hero-preview--fieldcraft">
-      <div className="preview-topline"><span>fieldcraft / invoice</span><span>● six-week pilot</span></div>
+      <div className="preview-topline"><span>fieldcraft / invoice</span><span>illustrative · synthetic example</span></div>
       <div className="fieldcraft-voice-note">“Toyota Camry interior detail, $180…”</div>
       <div className="fieldcraft-draft">
         <span>REVIEWABLE DRAFT</span>
@@ -55,19 +55,19 @@ export default function Hero() {
     <header id="hero" className="hero-section">
       <div className="hero-inner page-wrap">
         <div className="hero-copy">
-          <p className="eyebrow hero-line">AVINASH AMANCHI <span>·</span> PRODUCT / SOFTWARE ENGINEERING</p>
-          <h1 className="hero-line">I build software for the work people <em>actually do.</em></h1>
+          <p className="eyebrow hero-line">AVINASH AMANCHI <span>·</span> HIGH-SCHOOL SENIOR</p>
+          <h1 className="hero-line">I build software for <em>real work.</em></h1>
           <p className="hero-summary hero-line">
-            User-facing software and applied AI across accessibility, healthcare research, and field operations.
+            Seeking a Summer 2027 software engineering internship. I build mobile and web apps with on-device speech, local-first data, and Python ML workflows.
           </p>
           <div className="hero-actions hero-line">
             <a href="#projects" className="button button--primary">View selected work <span>↓</span></a>
-            <a href="/avinash-amanchi-resume.pdf" target="_blank" rel="noopener noreferrer" className="button button--quiet">Resume <span>↗</span></a>
+            <a href="/avinash-amanchi-resume.pdf" target="_blank" rel="noopener noreferrer" className="button button--quiet">View résumé (PDF) <span>↗</span></a>
           </div>
           <div className="proof-grid hero-line">
-            <ProofCard label="pilot" value="12 businesses" detail="Six weeks · 100+ jobs/invoices" />
-            <ProofCard label="recognition" value="3rd place" detail="Hanwha AI Center · hackathon" />
-            <ProofCard label="product" value="100+ clients" detail="EAA · four cities" />
+            <ProofCard label="FieldCraft" value="12" detail="businesses · six-week pilot" />
+            <ProofCard label="OpenAI × Start2 × Zendesk" value="3rd place" detail="Hackathon · hosted at Hanwha AI Center" />
+            <ProofCard label="Sepsis Vitals" value="0.9158" detail="AUROC · synthetic test set" />
           </div>
         </div>
         <SystemMap />
