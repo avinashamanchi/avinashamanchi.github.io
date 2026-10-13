@@ -19,7 +19,7 @@ function FieldCraftArt() {
     <p className="art-quote">“Toyota Camry interior detail, $180…”</p>
     <div className="art-arrow">↓</div>
     <div className="art-invoice"><div><span>INVOICE / 024</span><strong>Interior detail</strong></div><b>$180.00</b></div>
-    <div className="art-time"><strong>08</strong> min <span>→</span> <strong>02</strong> min</div>
+    <div className="art-time"><strong>~08</strong> min <span>→</span> <strong>~02</strong> min</div>
   </div>
 }
 
@@ -27,8 +27,8 @@ function ProjectArt({ project }) {
   if (project.visual === 'wordless') return <WordlessArt />
   if (project.visual === 'fieldcraft') return <FieldCraftArt />
   return <div className="project-art project-art--sepsis">
-    <img src={project.image} alt="Sepsis Vitals interface preview" loading="lazy" decoding="async" />
-    <div className="sepsis-overlay"><span>vitals-only</span><strong>0.858</strong><small>AUROC</small></div>
+    <img src={project.image} alt="Sepsis Vitals synthetic development interface preview" loading="lazy" decoding="async" />
+    <div className="sepsis-overlay"><span>full-feature model</span><strong>0.9158</strong><small>synthetic test AUROC</small></div>
   </div>
 }
 
@@ -53,19 +53,21 @@ export default function ProjectCard({ project, index }) {
       <h3>{project.title}</h3>
       <p className="project-subtitle">{project.subtitle}</p>
       <div className="project-facts">
+        {project.contribution && <div><span>My role</span><p>{project.contribution}</p></div>}
         <div><span>Problem</span><p>{project.problem}</p></div>
         <div><span>Built</span><p>{project.built}</p></div>
       </div>
-      <div className="project-result"><span>Outcome</span><strong>{project.result}</strong></div>
-      {project.comparison && <div className="research-comparison" aria-label="Sepsis Vitals model comparison">
-        <div><span>full feature model</span><strong>{project.comparison.full}</strong></div>
-        <b>remove labs ↓</b>
-        <div><span>vitals only</span><strong>{project.comparison.vitals}</strong></div>
-        <div className="comparison-delta"><span>difference</span><strong>{project.comparison.delta}</strong></div>
-      </div>}
+      <div className="project-result">
+        <span>Outcome</span>
+        <strong>{project.result}</strong>
+        {project.resultContext && <p className="project-result__context">{project.resultContext}</p>}
+        {project.note && <p className="project-result__context">{project.note}</p>}
+      </div>
       <div className="project-bottom">
         <div className="stack-list">{project.stack.map((item) => <span key={item}>{item}</span>)}</div>
         <div className="project-links">
+          {project.links.demo && <a href={project.links.demo} target="_blank" rel="noopener noreferrer">View demo <span>↗</span></a>}
+          {project.links.live && <a href={project.links.live} target="_blank" rel="noopener noreferrer">View live project <span>↗</span></a>}
           {project.links.github && <a href={project.links.github} target="_blank" rel="noopener noreferrer">View code <span>↗</span></a>}
           {project.links.article && <a href={project.links.article} target="_blank" rel="noopener noreferrer">Read the Patch story <span>↗</span></a>}
         </div>
@@ -79,7 +81,6 @@ export default function ProjectCard({ project, index }) {
           {project.links.article && <p className="project-note">Recognition and team photo reported by <a href={project.links.article} target="_blank" rel="noopener noreferrer">Dublin, CA Patch</a>.</p>}
         </div>
       </details>
-      {project.note && <p className="project-note">{project.note}</p>}
     </div>
   </article>
 }
