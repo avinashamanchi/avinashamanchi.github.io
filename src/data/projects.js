@@ -103,7 +103,7 @@ export const otherProjects = [
   {
     id: 'resume-analyzer',
     title: 'AI Resume Analyzer',
-    description: 'Resume parsing and ATS-style feedback. The screenshot is above; the hosted demo may take about 15 seconds to wake.',
+    description: 'Resume parsing and ATS-style feedback. The screenshot is above; the hosted demo may need time to wake.',
     stack: 'Python · APIs · Deployment',
     image: '/resumeaiimage.webp',
     alt: 'AI Resume Analyzer upload and feedback interface',
